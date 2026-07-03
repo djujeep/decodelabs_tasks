@@ -1,0 +1,207 @@
+:root {
+    --bg-color: #121212;
+    --card-color: #1e1e1e;
+    --secondary-card: #2a2a2a;
+    --peach: #ffb38a;
+    --text: #ffffff;
+    --light-text: #cccccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text);
+}
+
+.tracker {
+    width: 100%;
+    max-width: 700px;
+    background-color: var(--card-color);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(255, 179, 138, .15), 0 0 30px rgba(255, 179, 138, .08);
+}
+
+.tracker h1 {
+    text-align: center;
+    color: var(--peach);
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(255, 179, 138, .5);
+}
+
+.greeting {
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 35px;
+    background: linear-gradient(135deg, rgba(255, 179, 138, .2), rgba(255, 179, 138, .05));
+    border: 1px solid rgba(255, 179, 138, .3);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 35px;
+    box-shadow: 0 0 15px rgba(255, 179, 138, .2);
+    text-shadow: 0 0 8px rgba(255, 179, 138, .5);
+    transition: .4s;
+}
+
+.greeting:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(255, 179, 138, .4);
+}
+
+.task-input {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.task-input input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid rgba(255, 179, 138, .2);
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+}
+
+.task-input button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffb38a, #ff9f73);
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.task-input button:hover {
+    opacity: .9;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 179, 138, .5);
+}
+
+.progress {
+    background-color: var(--secondary-card);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.progress h2 {
+    margin-bottom: 15px;
+    color: var(--peach);
+    text-shadow: 0 0 8px rgba(255, 179, 138, .5);
+}
+
+.motivation {
+    background-color: var(--secondary-card);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.motivation h2 {
+    margin-bottom: 15px;
+    color: var(--peach);
+}
+
+#quote-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffb38a, #ff9f73);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#quote-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(255, 179, 138, .4);
+
+}
+
+#task-list {
+    margin-top: 20px;
+}
+
+#task-list li {
+    background-color: var(--secondary-card);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.completed {
+    opacity: .6;
+    text-decoration: line-through;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.complete-btn {
+    background: #ffb38a;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background: #ff7b7b;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#clear-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffb38a, #ff9f73);
+    color: black;
+    cursor: pointer;
+    transition: .4s;
+    font-weight: bold;
+}
+
+#clear-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 179, 138, .5);
+}
+
+@media(max-width:768px) {
+
+    .task-input {
+        flex-direction: column;
+    }
+
+    .tracker {
+        padding: 25px;
+    }
+}

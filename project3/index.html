@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+</head>
+<body>
+    <main class="tracker">
+        <h1>My To-Do List</h1>
+        <p class="greeting" id="greeting">
+            Good Morning, Girlytech 👋
+        </p>
+
+        <section class="task-input">
+            <input type="text" id="task-input" placeholder="What's Your Goal for Today?">
+            <button id="add-btn">Add Goal</button>
+        </section>
+
+        <section class="progress">
+            <h2>Progress</h2>
+            <p>
+                Completed: <span id="completed-count">0</span>
+            </p>
+
+            <p>Pending <span id="pending-count">0</span></p>
+        </section>
+
+        <section class="motivation">
+
+    <h2>Daily Motivation</h2>
+
+    <p id="quote">
+        "Small progress is still progress."
+    </p>
+
+    <button id="quote-btn">
+        New Quote
+    </button>
+
+</section>
+
+        <section>
+            <h2>Today's Goals</h2>
+            <ul id="task-list"></ul>
+        </section>
+        <button id="clear-btn">
+            Clear Completed
+        </button>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
