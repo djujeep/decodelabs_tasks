@@ -52,15 +52,9 @@ function addTask() {
     updateCounts();
 
 
-    const completeButton = li.querySelector(".complete-btn");
+    addTaskEvents();
 
-    completeButton.addEventListener("click", function () {
-
-        li.classList.toggle("completed");
-
-        updateCounts();
-
-    });
+    saveTasks();
 
 }
 
@@ -81,21 +75,101 @@ function updateCounts() {
 
 }
 
-clearButton.addEventListener("click", function () {
+clearButton.addEventListener(
+    "click",
+    function () {
 
-    const completedTasks = document.querySelectorAll(
-        "#task-list li.completed"
-    );
+        const completedTasks =
+            document.querySelectorAll(
+                "#task-list li.completed"
+            );
 
-    completedTasks.forEach(function (task) {
+        completedTasks.forEach(
+            function (task) {
 
-        task.remove();
+                task.remove();
+
+            }
+        );
+
+        updateCounts();
+
+        saveTasks();
 
     });
 
-    updateCounts();
+function saveTasks() {
 
-});
+    localStorage.setItem(
+        "goals",
+        taskList.innerHTML
+    );
+
+}
+
+function loadTasks() {
+
+    const savedTasks =
+        localStorage.getItem("goals");
+
+    if (savedTasks) {
+
+        taskList.innerHTML = savedTasks;
+
+        addTaskEvents();
+
+        updateCounts();
+
+    }
+
+}
+
+function addTaskEvents() {
+
+    const allTasks =
+        document.querySelectorAll("#task-list li");
+
+    allTasks.forEach(function (li) {
+
+        const completeButton =
+            li.querySelector(".complete-btn");
+
+        const deleteButton =
+            li.querySelector(".delete-btn");
+
+
+        completeButton.addEventListener(
+            "click",
+            function () {
+
+                li.classList.toggle(
+                    "completed"
+                );
+
+                updateCounts();
+
+                saveTasks();
+
+            }
+        );
+
+
+        deleteButton.addEventListener(
+            "click",
+            function () {
+
+                li.remove();
+
+                updateCounts();
+
+                saveTasks();
+
+            }
+        );
+
+    });
+
+}
 
 const quote = document.querySelector("#quote");
 
@@ -121,3 +195,5 @@ quoteButton.addEventListener("click", function () {
     quote.textContent = quotes[randomNumber];
 
 });
+
+loadTasks();
